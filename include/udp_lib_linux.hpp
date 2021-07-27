@@ -50,7 +50,7 @@ namespace udp
                 const int sleep_time = 1; // [msec]
                 std::this_thread::sleep_for(std::chrono::milliseconds(sleep_time));
 
-                // exit(2);
+                exit(2);
             }
         }
 

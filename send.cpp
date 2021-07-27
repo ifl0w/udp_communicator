@@ -6,7 +6,11 @@
 
 int main()
 {
-	udp::UDPLib<ControlMsg> server("192.168.140.210", 60001);
+	// udp::UDPLib<ControlMsg> server("192.168.0.210", 60001);
+	// udp::UDPLib<ControlMsg> server("192.168.0.31", 60001); // aiteno pc
+	udp::UDPLib<ControlMsg> server("192.168.0.11", 60001); // nagasakasan-pc
+
+	// udp::UDPLib<ControlMsg> server("0.0.0.0", 60001);
 
 	ControlMsg msg;
 

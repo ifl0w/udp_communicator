@@ -8,7 +8,10 @@
 int main()
 {
 
-	udp::UDPLib<ObservedMsg> client("192.168.140.101", 60000);
+	// udp::UDPLib<ObservedMsg> client("192.168.0.101", 60000); // jibun no pc
+	udp::UDPLib<ObservedMsg> client("192.168.0.210", 60000); // jibun no pc
+
+	// udp::UDPLib<ObservedMsg> client("127.0.0.1", 60000);
 
 	client.udp_bind();
 
