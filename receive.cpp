@@ -17,7 +17,7 @@ int main()
 
 	ObservedMsg msg;
 
-	const int sleep_time = 2000; // [msec]
+	const int sleep_time = 1; // [msec]
 
 	std::cout << "Receive every " << sleep_time / 1000.0 << " seconds" << std::endl;
 
@@ -25,7 +25,10 @@ int main()
 	{
 		if (client.udp_receive(&msg))
 		{
-			std::cout << "Receive_time : " << msg.time_counter << std::endl;
+			std::cout << "Receive_time[s] : " << msg.time_counter / 1000.0 << std::endl;
+			std::cout << "Receive_speed : " << msg.ego_vehicle_speed << std::endl;
+			std::cout << "Receive_x_g : " << msg.ego_vehicle_pose_x_g << std::endl;
+
 			// std::cout << "Receive_type: " << msg.type << std::endl;
 			// std::cout << "Receive_x: " << msg.x << std::endl;
 		}

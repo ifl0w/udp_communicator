@@ -8,13 +8,15 @@ int main()
 {
 	// udp::UDPLib<ControlMsg> server("192.168.0.210", 60001);
 	// udp::UDPLib<ControlMsg> server("192.168.0.31", 60001); // aiteno pc
-	udp::UDPLib<ControlMsg> server("192.168.0.11", 60001); // nagasakasan-pc
+	// udp::UDPLib<ControlMsg> server("192.168.0.11", 60001); // nagasakasan-pc
+	// udp::UDPLib<ControlMsg> server("192.168.0.201", 60001); // micro-auto-box
+	udp::UDPLib<ControlMsg> server("192.168.0.201", 60001); // micro-auto-box
 
 	// udp::UDPLib<ControlMsg> server("0.0.0.0", 60001);
 
 	ControlMsg msg;
 
-	const int sleep_time = 100; // [msec]
+	const int sleep_time = 1; // [msec]
 
 	// msg.x = 0;
 	// msg.y = 30;
@@ -28,12 +30,11 @@ int main()
 
 		// std::chrono::system_clock::time_point p = std::chrono::system_clock::now();
 		// msg.time = std::chrono::system_clock::to_time_t(p);
-
-		server.udp_send(msg);
-
 		msg.time_counter = 1.0;
 
 		msg.steer_cmd += 1.0;
+
+		server.udp_send(msg);
 
 		// std::cout << "Send_time : " << msg.time << std::endl;
 		// std::cout << "Send_type : " << msg.type << std::endl;
