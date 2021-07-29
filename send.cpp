@@ -6,17 +6,12 @@
 
 int main()
 {
-	// udp::UDPLib<ControlMsg> server("192.168.0.210", 60001);
-	// udp::UDPLib<ControlMsg> server("192.168.0.31", 60001); // aiteno pc
-	// udp::UDPLib<ControlMsg> server("192.168.0.11", 60001); // nagasakasan-pc
-	// udp::UDPLib<ControlMsg> server("192.168.0.201", 60001); // micro-auto-box
-	udp::UDPLib<ControlMsg> server("192.168.0.201", 60001); // micro-auto-box
 
-	// udp::UDPLib<ControlMsg> server("0.0.0.0", 60001);
+	udp::UDPLib<ControlMsg> server("192.168.0.201", 60001, 60001); // IP: micro-auto-box
 
 	ControlMsg msg;
 
-	const int sleep_time = 1; // [msec]
+	const int sleep_time = 100; // [msec]
 
 	// msg.x = 0;
 	// msg.y = 30;
